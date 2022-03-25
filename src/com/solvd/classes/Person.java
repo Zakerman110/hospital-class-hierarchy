@@ -1,8 +1,10 @@
 package com.solvd.classes;
 
+import com.solvd.interfaces.IPerson;
+
 import java.util.Date;
 
-public abstract class Person {
+public abstract class Person implements IPerson {
 
     private String firstName;
     private String lastName;
@@ -73,5 +75,27 @@ public abstract class Person {
 
     public void setHospital(Hospital hospital) {
         this.hospital = hospital;
+    }
+
+    public String getDateOfBirth() {
+        return null;
+    }
+
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
+
+    public String getAge() {
+        return null;
+    }
+
+    @Override
+    public String shortInformation() {
+        return getFullName() + " is " + getAge() + " years old";
+    }
+
+    @Override
+    public String detailInformation() {
+        return getFullName() + " is " + getAge() + " years old and lives at " + this.address;
     }
 }

@@ -1,8 +1,11 @@
 package com.solvd.classes;
 
-import java.util.Date;
+import com.solvd.interfaces.IPatient;
 
-public class Patient extends Person{
+import java.util.Date;
+import java.util.List;
+
+public class Patient extends Person implements IPatient {
 
     private Date accepted;
     private MedicalBook medicalBook;
@@ -38,5 +41,15 @@ public class Patient extends Person{
 
     public void setRoom(Room room) {
         this.room = room;
+    }
+
+    @Override
+    public boolean IsCured() {
+        return false;
+    }
+
+    @Override
+    public List<String> getCurrentIllnesses() {
+        return null;
     }
 }

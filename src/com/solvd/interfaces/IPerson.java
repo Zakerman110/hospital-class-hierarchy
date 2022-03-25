@@ -4,11 +4,11 @@ public interface IPerson extends IInformation {
 
     String getFirstName();
 
-    void setFirstName();
+    void setFirstName(String firstName);
 
     String getLastName();
 
-    void setLastName();
+    void setLastName(String lastName);
 
     String getDateOfBirth();
 
