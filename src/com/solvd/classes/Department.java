@@ -1,4 +1,4 @@
-package com.solvd;
+package com.solvd.classes;
 
 public class Department {
 
