@@ -1,6 +1,6 @@
-package com.solvd.classes;
+package com.solvd.Classes;
 
-import com.solvd.interfaces.IPatient;
+import com.solvd.Interfaces.IPatient;
 
 import java.util.Date;
 import java.util.List;

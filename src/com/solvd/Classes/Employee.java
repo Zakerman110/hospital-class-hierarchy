@@ -1,6 +1,6 @@
-package com.solvd.classes;
+package com.solvd.Classes;
 
-import com.solvd.interfaces.IEmployee;
+import com.solvd.Interfaces.IEmployee;
 
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package com.solvd.enums;
+package com.solvd.Enums;
 
 public enum Blood {
 

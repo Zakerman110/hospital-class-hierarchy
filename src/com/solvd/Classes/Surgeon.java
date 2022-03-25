@@ -1,4 +1,4 @@
-package com.solvd.classes;
+package com.solvd.Classes;
 
 import java.util.Date;
 

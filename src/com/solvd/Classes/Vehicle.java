@@ -1,6 +1,6 @@
-package com.solvd.classes;
+package com.solvd.Classes;
 
-import com.solvd.interfaces.IInformation;
+import com.solvd.Interfaces.IInformation;
 
 import java.util.Date;
 import java.util.Map;

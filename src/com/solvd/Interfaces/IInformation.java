@@ -1,4 +1,4 @@
-package com.solvd.interfaces;
+package com.solvd.Interfaces;
 
 public interface IInformation {
 
