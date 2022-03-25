@@ -5,20 +5,14 @@ import java.util.Date;
 public class Patient extends Person{
 
     private Date accepted;
-    private String[] sickness;
-    private String[] prescriptions;
-    private String[] allergies; // to delete/change
+    private MedicalBook medicalBook;
     private Room room;
-    private Blood blood;
 
-    public Patient(String firstName, String lastName, String gender, Date birthDate, String address, String phone, Hospital hospital, Date accepted, String[] sickness, String[] prescriptions, String[] allergies, Room room, Blood blood) {
+    public Patient(String firstName, String lastName, String gender, Date birthDate, String address, String phone, Hospital hospital, Date accepted, MedicalBook medicalBook, Room room) {
         super(firstName, lastName, gender, birthDate, address, phone, hospital);
         this.accepted = accepted;
-        this.sickness = sickness;
-        this.prescriptions = prescriptions;
-        this.allergies = allergies;
+        this.medicalBook = medicalBook;
         this.room = room;
-        this.blood = blood;
     }
 
     public Patient() {
@@ -32,28 +26,12 @@ public class Patient extends Person{
         this.accepted = accepted;
     }
 
-    public String[] getSickness() {
-        return sickness;
+    public MedicalBook getMedicalBook() {
+        return medicalBook;
     }
 
-    public void setSickness(String[] sickness) {
-        this.sickness = sickness;
-    }
-
-    public String[] getPrescriptions() {
-        return prescriptions;
-    }
-
-    public void setPrescriptions(String[] prescriptions) {
-        this.prescriptions = prescriptions;
-    }
-
-    public String[] getAllergies() {
-        return allergies;
-    }
-
-    public void setAllergies(String[] allergies) {
-        this.allergies = allergies;
+    public void setMedicalBook(MedicalBook medicalBook) {
+        this.medicalBook = medicalBook;
     }
 
     public Room getRoom() {
@@ -62,13 +40,5 @@ public class Patient extends Person{
 
     public void setRoom(Room room) {
         this.room = room;
-    }
-
-    public Blood getBlood() {
-        return blood;
-    }
-
-    public void setBlood(Blood blood) {
-        this.blood = blood;
     }
 }
