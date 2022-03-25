@@ -7,12 +7,13 @@ public abstract class Person {
     private String firstName;
     private String lastName;
     private String gender;
-    private Date birthDate;
+    private final Date birthDate;
     private String address;
     private String phone;
     private Hospital hospital;
 
-    public Person(String firstName, String lastName, String gender, Date birthDate, String address, String phone, Hospital hospital) {
+    public Person(String firstName, String lastName, String gender, Date birthDate, String address, String phone,
+                  Hospital hospital) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
@@ -20,9 +21,6 @@ public abstract class Person {
         this.address = address;
         this.phone = phone;
         this.hospital = hospital;
-    }
-
-    public Person() {
     }
 
     public String getFirstName() {
@@ -51,10 +49,6 @@ public abstract class Person {
 
     public Date getBirthDate() {
         return birthDate;
-    }
-
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
     }
 
     public String getAddress() {

@@ -8,14 +8,12 @@ public class Patient extends Person{
     private MedicalBook medicalBook;
     private Room room;
 
-    public Patient(String firstName, String lastName, String gender, Date birthDate, String address, String phone, Hospital hospital, Date accepted, MedicalBook medicalBook, Room room) {
+    public Patient(String firstName, String lastName, String gender, Date birthDate, String address, String phone,
+                   Hospital hospital, Date accepted, MedicalBook medicalBook, Room room) {
         super(firstName, lastName, gender, birthDate, address, phone, hospital);
         this.accepted = accepted;
         this.medicalBook = medicalBook;
         this.room = room;
-    }
-
-    public Patient() {
     }
 
     public Date getAccepted() {

@@ -8,14 +8,12 @@ public class Employee extends Person {
     private String[] education;
     private Department department;
 
-    public Employee(String firstName, String lastName, String gender, Date birthDate, String address, String phone, Hospital hospital, Date joined, String[] education, Department department) {
+    public Employee(String firstName, String lastName, String gender, Date birthDate, String address, String phone,
+                    Hospital hospital, Date joined, String[] education, Department department) {
         super(firstName, lastName, gender, birthDate, address, phone, hospital);
         this.joined = joined;
         this.education = education;
         this.department = department;
-    }
-
-    public Employee() {
     }
 
     public Date getJoined() {
