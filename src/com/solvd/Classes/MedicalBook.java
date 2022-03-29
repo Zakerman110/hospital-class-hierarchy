@@ -1,4 +1,6 @@
-package com.solvd;
+package com.solvd.Classes;
+
+import com.solvd.Enums.Blood;
 
 public class MedicalBook {
 

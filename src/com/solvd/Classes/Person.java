@@ -1,18 +1,21 @@
-package com.solvd;
+package com.solvd.Classes;
+
+import com.solvd.Interfaces.IPerson;
 
 import java.util.Date;
 
-public abstract class Person {
+public abstract class Person implements IPerson {
 
     private String firstName;
     private String lastName;
     private String gender;
-    private Date birthDate;
+    private final Date birthDate;
     private String address;
     private String phone;
     private Hospital hospital;
 
-    public Person(String firstName, String lastName, String gender, Date birthDate, String address, String phone, Hospital hospital) {
+    public Person(String firstName, String lastName, String gender, Date birthDate, String address, String phone,
+                  Hospital hospital) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
@@ -20,9 +23,6 @@ public abstract class Person {
         this.address = address;
         this.phone = phone;
         this.hospital = hospital;
-    }
-
-    public Person() {
     }
 
     public String getFirstName() {
@@ -53,10 +53,6 @@ public abstract class Person {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
-    }
-
     public String getAddress() {
         return address;
     }
@@ -79,5 +75,27 @@ public abstract class Person {
 
     public void setHospital(Hospital hospital) {
         this.hospital = hospital;
+    }
+
+    public String getDateOfBirth() {
+        return null;
+    }
+
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
+
+    public String getAge() {
+        return null;
+    }
+
+    @Override
+    public String shortInformation() {
+        return getFullName() + " is " + getAge() + " years old";
+    }
+
+    @Override
+    public String detailInformation() {
+        return getFullName() + " is " + getAge() + " years old and lives at " + this.address;
     }
 }

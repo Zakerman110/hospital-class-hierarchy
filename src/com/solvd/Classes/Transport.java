@@ -1,6 +1,9 @@
-package com.solvd;
+package com.solvd.Classes;
 
-public class Transport {
+import java.util.Date;
+import java.util.Map;
+
+public class Transport extends Vehicle {
 
     private String licenseNumber;
     private String model;
@@ -37,5 +40,20 @@ public class Transport {
 
     public void setYear(int year) {
         this.year = year;
+    }
+
+    @Override
+    public Map<Date, Double> getLastDaysConsumption(int lastNDays) {
+        return null;
+    }
+
+    @Override
+    public String shortInformation() {
+        return null;
+    }
+
+    @Override
+    public String detailInformation() {
+        return null;
     }
 }

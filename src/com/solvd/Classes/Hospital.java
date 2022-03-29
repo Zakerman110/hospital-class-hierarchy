@@ -1,4 +1,4 @@
-package com.solvd;
+package com.solvd.Classes;
 
 public class Hospital {
 
