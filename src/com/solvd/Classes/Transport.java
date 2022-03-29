@@ -1,29 +1,20 @@
 package com.solvd.Classes;
 
+import com.solvd.Exceptions.IncorrectRangeException;
+import com.solvd.Exceptions.NotFoundException;
+
 import java.util.Date;
 import java.util.Map;
 
 public class Transport extends Vehicle {
 
-    private String licenseNumber;
     private String model;
     private int year;
 
-    public Transport(String licenseNumber, String model, int year) {
-        this.licenseNumber = licenseNumber;
+    public Transport(int wheels, int seats, String licenseNumber, Map<Date, Double> fuelConsumptionPerDay, String model, int year) {
+        super(wheels, seats, licenseNumber, fuelConsumptionPerDay);
         this.model = model;
         this.year = year;
-    }
-
-    public Transport() {
-    }
-
-    public String getLicenseNumber() {
-        return licenseNumber;
-    }
-
-    public void setLicenseNumber(String licenseNumber) {
-        this.licenseNumber = licenseNumber;
     }
 
     public String getModel() {
@@ -43,7 +34,9 @@ public class Transport extends Vehicle {
     }
 
     @Override
-    public Map<Date, Double> getLastDaysConsumption(int lastNDays) {
+    public Map<Date, Double> getLastDaysConsumption(int lastNDays) throws NotFoundException, IncorrectRangeException {
+        if(getFuelConsumptionPerDay().isEmpty()) throw new NotFoundException("No fuel consumption data");
+        if(getFuelConsumptionPerDay().size() < lastNDays) throw new IncorrectRangeException("Too many days inserted");
         return null;
     }
 

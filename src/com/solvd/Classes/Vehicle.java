@@ -1,5 +1,7 @@
 package com.solvd.Classes;
 
+import com.solvd.Exceptions.IncorrectRangeException;
+import com.solvd.Exceptions.NotFoundException;
 import com.solvd.Interfaces.IInformation;
 
 import java.util.Date;
@@ -12,5 +14,44 @@ public abstract class Vehicle implements IInformation {
     private String licenseNumber;
     private Map<Date, Double> fuelConsumptionPerDay;
 
-    public abstract Map<Date, Double> getLastDaysConsumption(int lastNDays);
+    public Vehicle(int wheels, int seats, String licenseNumber, Map<Date, Double> fuelConsumptionPerDay) {
+        this.wheels = wheels;
+        this.seats = seats;
+        this.licenseNumber = licenseNumber;
+        this.fuelConsumptionPerDay = fuelConsumptionPerDay;
+    }
+
+    public abstract Map<Date, Double> getLastDaysConsumption(int lastNDays) throws NotFoundException, IncorrectRangeException;
+
+    public int getWheels() {
+        return wheels;
+    }
+
+    public void setWheels(int wheels) {
+        this.wheels = wheels;
+    }
+
+    public int getSeats() {
+        return seats;
+    }
+
+    public void setSeats(int seats) {
+        this.seats = seats;
+    }
+
+    public String getLicenseNumber() {
+        return licenseNumber;
+    }
+
+    public void setLicenseNumber(String licenseNumber) {
+        this.licenseNumber = licenseNumber;
+    }
+
+    public Map<Date, Double> getFuelConsumptionPerDay() {
+        return fuelConsumptionPerDay;
+    }
+
+    public void setFuelConsumptionPerDay(Map<Date, Double> fuelConsumptionPerDay) {
+        this.fuelConsumptionPerDay = fuelConsumptionPerDay;
+    }
 }
