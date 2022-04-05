@@ -2,12 +2,11 @@ package com.solvd.hospital.Classes;
 
 import com.solvd.hospital.Exceptions.IncorrectRangeException;
 import com.solvd.hospital.Exceptions.NotFoundException;
-import com.solvd.hospital.Interfaces.IInformation;
 
 import java.util.Date;
 import java.util.Map;
 
-public abstract class Vehicle implements IInformation {
+public abstract class Vehicle {
 
     private int wheels;
     private int seats;

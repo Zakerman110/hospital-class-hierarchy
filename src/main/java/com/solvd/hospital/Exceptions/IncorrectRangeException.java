@@ -2,7 +2,13 @@ package com.solvd.hospital.Exceptions;
 
 public class IncorrectRangeException extends Exception{
 
-    public IncorrectRangeException(String message) {
+    private final int size;
+
+    public IncorrectRangeException(String message, int size)
+    {
         super(message);
+        this.size = size;
     }
+
+    public int getSize(){return size;}
 }

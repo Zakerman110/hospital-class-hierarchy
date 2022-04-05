@@ -89,13 +89,4 @@ public abstract class Person implements IPerson {
         return null;
     }
 
-    @Override
-    public String shortInformation() {
-        return getFullName() + " is " + getAge() + " years old";
-    }
-
-    @Override
-    public String detailInformation() {
-        return getFullName() + " is " + getAge() + " years old and lives at " + this.address;
-    }
 }

@@ -42,33 +42,4 @@ public class Employee extends Person implements IEmployee {
         this.department = department;
     }
 
-    @Override
-    public double getSalary() {
-        return 0;
-    }
-
-    @Override
-    public void setSalary(double salary) {
-
-    }
-
-    @Override
-    public String getWorkingTime() {
-        return null;
-    }
-
-    @Override
-    public void setWorkingTime() {
-
-    }
-
-    @Override
-    public String getSpecialty() {
-        return null;
-    }
-
-    @Override
-    public void setSpecialty() {
-
-    }
 }
