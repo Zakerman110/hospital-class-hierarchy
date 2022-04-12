@@ -1,5 +1,10 @@
 package com.solvd.hospital.Classes;
 
+import java.util.Date;
+import java.util.Map;
+
+import org.apache.log4j.Logger;
+
 import com.solvd.hospital.Exceptions.IncorrectRangeException;
 import com.solvd.hospital.Exceptions.NotFoundException;
 //import org.slf4j.Logger;
@@ -38,7 +43,6 @@ public class Transport extends Vehicle {
         this.year = year;
     }
 
-    @Override
     public Map<Date, Double> getLastDaysConsumption(int lastNDays) throws NotFoundException, IncorrectRangeException {
         if(getFuelConsumptionPerDay().isEmpty())
         {

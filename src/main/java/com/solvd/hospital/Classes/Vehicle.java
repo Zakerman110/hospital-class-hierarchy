@@ -1,10 +1,10 @@
 package com.solvd.hospital.Classes;
 
-import com.solvd.hospital.Exceptions.IncorrectRangeException;
-import com.solvd.hospital.Exceptions.NotFoundException;
-
 import java.util.Date;
 import java.util.Map;
+
+import com.solvd.hospital.Exceptions.IncorrectRangeException;
+import com.solvd.hospital.Exceptions.NotFoundException;
 
 public abstract class Vehicle {
 

@@ -1,9 +1,9 @@
 package com.solvd.hospital.Classes;
 
-import com.solvd.hospital.Interfaces.IPatient;
-
 import java.util.Date;
 import java.util.List;
+
+import com.solvd.hospital.Interfaces.IPatient;
 
 public class Patient extends Person implements IPatient {
 

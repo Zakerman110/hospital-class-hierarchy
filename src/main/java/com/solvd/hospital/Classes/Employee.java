@@ -1,8 +1,8 @@
 package com.solvd.hospital.Classes;
 
-import com.solvd.hospital.Interfaces.IEmployee;
-
 import java.util.Date;
+
+import com.solvd.hospital.Interfaces.IEmployee;
 
 public class Employee extends Person implements IEmployee {
 

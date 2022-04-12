@@ -1,8 +1,8 @@
 package com.solvd.hospital.Classes;
 
-import com.solvd.hospital.Interfaces.IPerson;
-
 import java.util.Date;
+
+import com.solvd.hospital.Interfaces.IPerson;
 
 public abstract class Person implements IPerson {
 
