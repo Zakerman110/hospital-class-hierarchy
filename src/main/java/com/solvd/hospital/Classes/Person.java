@@ -1,6 +1,9 @@
 package com.solvd.hospital.Classes;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.Period;
+
+import org.apache.commons.lang3.StringUtils;
 
 import com.solvd.hospital.Interfaces.IPerson;
 
@@ -9,12 +12,12 @@ public abstract class Person implements IPerson {
     private String firstName;
     private String lastName;
     private String gender;
-    private final Date birthDate;
+    private final LocalDate birthDate;
     private String address;
     private String phone;
     private Hospital hospital;
 
-    public Person(String firstName, String lastName, String gender, Date birthDate, String address, String phone,
+    public Person(String firstName, String lastName, String gender, LocalDate birthDate, String address, String phone,
                   Hospital hospital) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -49,7 +52,7 @@ public abstract class Person implements IPerson {
         this.gender = gender;
     }
 
-    public Date getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
@@ -82,11 +85,11 @@ public abstract class Person implements IPerson {
     }
 
     public String getFullName() {
-        return firstName + " " + lastName;
+        return StringUtils.joinWith(" ", firstName, lastName);
     }
 
-    public String getAge() {
-        return null;
+    public int getAge() {
+        return Period.between(birthDate, LocalDate.now()).getYears();
     }
 
 }

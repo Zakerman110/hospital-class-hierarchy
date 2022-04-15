@@ -4,5 +4,5 @@ public interface IPerson {
 
     String getFullName();
 
-    String getAge();
+    int getAge();
 }

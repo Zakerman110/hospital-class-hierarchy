@@ -1,29 +1,29 @@
 package com.solvd.hospital.Classes;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import com.solvd.hospital.Interfaces.IPatient;
 
 public class Patient extends Person implements IPatient {
 
-    private Date accepted;
+    private LocalDate accepted;
     private MedicalBook medicalBook;
     private Room room;
 
-    public Patient(String firstName, String lastName, String gender, Date birthDate, String address, String phone,
-                   Hospital hospital, Date accepted, MedicalBook medicalBook, Room room) {
+    public Patient(String firstName, String lastName, String gender, LocalDate birthDate, String address, String phone,
+                   Hospital hospital, LocalDate accepted, MedicalBook medicalBook, Room room) {
         super(firstName, lastName, gender, birthDate, address, phone, hospital);
         this.accepted = accepted;
         this.medicalBook = medicalBook;
         this.room = room;
     }
 
-    public Date getAccepted() {
+    public LocalDate getAccepted() {
         return accepted;
     }
 
-    public void setAccepted(Date accepted) {
+    public void setAccepted(LocalDate accepted) {
         this.accepted = accepted;
     }
 
