@@ -2,6 +2,8 @@ package com.solvd.hospital.Classes;
 
 import java.util.Date;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.apache.log4j.Logger;
 
@@ -48,6 +50,10 @@ public class Transport extends Vehicle {
             LOGGER.error("Too many days inserted");
             throw new IncorrectRangeException("Too many days inserted", size);
         }
-        return null;
+        long count = getFuelConsumptionPerDay().entrySet().size();
+        Stream<Map.Entry<Date, Double>> stream = getFuelConsumptionPerDay().entrySet().stream();
+
+        // ТУТ ЕЛЕМЕНТИ HASH MAP НЕ ПО ПОРЯДКУ, ТОМУ МЕТОД НЕ ПРАЦЮЄ КОРЕКТНО
+        return stream.skip(count - lastNDays).collect(Collectors.toMap(x -> x.getKey(), x -> x.getValue()));
     }
 }
