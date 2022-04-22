@@ -6,6 +6,7 @@ import java.util.TreeMap;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import com.solvd.hospital.Interfaces.MyPredicate;
 import org.apache.log4j.Logger;
 
 import com.solvd.hospital.Exceptions.IncorrectRangeException;
@@ -56,5 +57,19 @@ public class Transport extends Vehicle {
 
         Map<LocalDate, Double> result = stream.skip(count - lastNDays).collect(Collectors.toMap(x -> x.getKey(), x -> x.getValue()));
         return new TreeMap<>(result);
+    }
+
+    public TreeMap<LocalDate, Double> getConsumption(MyPredicate predicate)
+    {
+        TreeMap<LocalDate, Double> result = new TreeMap<LocalDate, Double>();
+
+        for(Map.Entry<LocalDate, Double> entry : getFuelConsumptionPerDay().entrySet()) {
+            LocalDate key = entry.getKey();
+            Double value = entry.getValue();
+
+            if(predicate.test(value)) result.put(key, value);
+        }
+
+        return result;
     }
 }

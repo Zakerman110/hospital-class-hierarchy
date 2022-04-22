@@ -3,6 +3,7 @@ package com.solvd.hospital;
 import com.solvd.hospital.Classes.Transport;
 import com.solvd.hospital.Exceptions.IncorrectRangeException;
 import com.solvd.hospital.Exceptions.NotFoundException;
+import com.solvd.hospital.Interfaces.MyPredicate;
 import org.apache.log4j.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,9 +19,9 @@ public class HospitalApplication {
     public static void main(String[] args) {
 
         TreeMap<LocalDate, Double> fuel = new TreeMap<LocalDate, Double>();
-        fuel.put(LocalDate.of(2022, 2, 12), 25d);
+        fuel.put(LocalDate.of(2022, 2, 12), 55d);
         fuel.put(LocalDate.of(2022, 2, 13), 35d);
-        fuel.put(LocalDate.of(2022, 2, 14), 20d);
+        fuel.put(LocalDate.of(2022, 2, 14), 70d);
         fuel.put(LocalDate.of(2022, 2, 15), 17d);
 
         Transport porsche = new Transport(4, 4, "CE1111BA", fuel, "porsche", 2022);
@@ -34,6 +35,14 @@ public class HospitalApplication {
             LOGGER.error("Too many days inserted");
         } catch (NotFoundException e) {
             LOGGER.error("No fuel consumption data");
+        }
+
+        // Фунціональний інтерфейс
+        MyPredicate predicate = x -> x > 50;
+        Map<LocalDate, Double> consumptions = porsche.getConsumption(predicate);
+        for(Map.Entry<LocalDate, Double> item : consumptions.entrySet()){
+
+            LOGGER.info("Date: " + item.getKey() + " Value: " + item.getValue());
         }
 
         //SpringApplication.run(HospitalApplication.class, args);
