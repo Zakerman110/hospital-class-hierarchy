@@ -55,20 +55,18 @@ public class Transport extends Vehicle {
         long count = getFuelConsumptionPerDay().entrySet().size();
         Stream<Map.Entry<LocalDate, Double>> stream = getFuelConsumptionPerDay().entrySet().stream();
 
-        Map<LocalDate, Double> result = stream.skip(count - lastNDays).collect(Collectors.toMap(x -> x.getKey(), x -> x.getValue()));
+        Map<LocalDate, Double> result = stream.skip(count - lastNDays).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
         return new TreeMap<>(result);
     }
 
     public TreeMap<LocalDate, Double> getConsumption(MyPredicate predicate)
     {
-        TreeMap<LocalDate, Double> result = new TreeMap<LocalDate, Double>();
+        TreeMap<LocalDate, Double> result = new TreeMap<>();
 
-        for(Map.Entry<LocalDate, Double> entry : getFuelConsumptionPerDay().entrySet()) {
-            LocalDate key = entry.getKey();
-            Double value = entry.getValue();
-
-            if(predicate.test(value)) result.put(key, value);
-        }
+        Stream<Map.Entry<LocalDate, Double>> stream = getFuelConsumptionPerDay().entrySet().stream();
+        stream.forEach(s -> {
+            if(predicate.test(s.getValue())) result.put(s.getKey(), s.getValue());
+        });
 
         return result;
     }
