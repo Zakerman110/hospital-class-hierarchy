@@ -1,7 +1,8 @@
 package com.solvd.hospital.Classes;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Map;
+import java.util.TreeMap;
 
 import com.solvd.hospital.Exceptions.IncorrectRangeException;
 import com.solvd.hospital.Exceptions.NotFoundException;
@@ -11,16 +12,16 @@ public abstract class Vehicle {
     private int wheels;
     private int seats;
     private String licenseNumber;
-    private Map<Date, Double> fuelConsumptionPerDay;
+    private TreeMap<LocalDate, Double> fuelConsumptionPerDay;
 
-    public Vehicle(int wheels, int seats, String licenseNumber, Map<Date, Double> fuelConsumptionPerDay) {
+    public Vehicle(int wheels, int seats, String licenseNumber, TreeMap<LocalDate, Double> fuelConsumptionPerDay) {
         this.wheels = wheels;
         this.seats = seats;
         this.licenseNumber = licenseNumber;
         this.fuelConsumptionPerDay = fuelConsumptionPerDay;
     }
 
-    public abstract Map<Date, Double> getLastDaysConsumption(int lastNDays) throws NotFoundException, IncorrectRangeException;
+    public abstract Map<LocalDate, Double> getLastDaysConsumption(int lastNDays) throws NotFoundException, IncorrectRangeException;
 
     public int getWheels() {
         return wheels;
@@ -46,11 +47,11 @@ public abstract class Vehicle {
         this.licenseNumber = licenseNumber;
     }
 
-    public Map<Date, Double> getFuelConsumptionPerDay() {
+    public TreeMap<LocalDate, Double> getFuelConsumptionPerDay() {
         return fuelConsumptionPerDay;
     }
 
-    public void setFuelConsumptionPerDay(Map<Date, Double> fuelConsumptionPerDay) {
+    public void setFuelConsumptionPerDay(TreeMap<LocalDate, Double> fuelConsumptionPerDay) {
         this.fuelConsumptionPerDay = fuelConsumptionPerDay;
     }
 }
