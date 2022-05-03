@@ -1,5 +1,6 @@
 package com.solvd.hospital;
 
+import com.solvd.hospital.Classes.DeadLock;
 import com.solvd.hospital.Classes.Transport;
 import com.solvd.hospital.Exceptions.IncorrectRangeException;
 import com.solvd.hospital.Exceptions.NotFoundException;
@@ -48,6 +49,25 @@ public class HospitalApplication {
 
             LOGGER.info("Consumption: Date: " + item.getKey() + " Value: " + item.getValue());
         }
+
+        // DeadLock
+        Transport car1 = new Transport(4, 2, "CE1111BA", null, "Mercedes", 2014);
+        Transport car2 = new Transport(4, 2, "CE2222BE", null, "Volvo", 2015);
+
+        Runnable task1 = () -> {
+            DeadLock.TightBridgeCrossing(car1, car2);
+        };
+
+        Thread thread1 = new Thread(task1);
+
+        Runnable task2 = () -> {
+            DeadLock.TightBridgeCrossing(car2, car1);
+        };
+
+        Thread thread2 = new Thread(task2);
+
+        thread1.start();
+        thread2.start();
 
         //SpringApplication.run(HospitalApplication.class, args);
     }
